@@ -27,7 +27,7 @@ services:
       - db
 
   db:
-    image: mysql
+    image: mysql:8
     restart: always
     environment:
       MYSQL_DATABASE: crud
