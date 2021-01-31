@@ -5,7 +5,7 @@ services:
     image: scalablescripts/microservices-api
     environment:
       DB_HOST: db
-      DB_DATABASE: microservices
+      DB_DATABASE: crud
       DB_USERNAME: root
       DB_PASSWORD: root
     ports:
@@ -18,7 +18,7 @@ services:
     image: scalablescripts/microservices-api
     environment:
       DB_HOST: db
-      DB_DATABASE: microservices
+      DB_DATABASE: crud
       DB_USERNAME: root
       DB_PASSWORD: root
     ports:
@@ -30,7 +30,7 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: microservices
+      MYSQL_DATABASE: crud
       MYSQL_USER: root
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
