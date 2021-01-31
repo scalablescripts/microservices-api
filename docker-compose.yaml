@@ -1,0 +1,38 @@
+version: '3.9'
+services:
+  admin_backend:
+    container_name: backend
+    image: scalablescripts/microservices-api
+    environment:
+      DB_HOST: db
+      DB_DATABASE: microservices
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  main_backend:
+    container_name: main
+    image: scalablescripts/microservices-api
+    environment:
+      DB_HOST: db
+      DB_DATABASE: microservices
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    ports:
+      - 8001:8000
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: microservices
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
